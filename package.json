@@ -1,0 +1,55 @@
+{
+  "name": "office-for-linux",
+  "version": "0.0.1",
+  "description": "Unofficial client for Microsoft Office for Linux",
+  "homepage": "https://github.com/vi2nano/office-for-linux",
+  "keywords": [
+    "Word",
+    "Excel",
+    "Microsoft Office",
+    "OneNote",
+    "Microsoft Word",
+    "Microsoft Excel",
+    "Microsoft OneNote",
+    "Office"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/vi2nano/office-for-linux"
+  },
+  "author": "Jeffrey Jensen <jeffreyjensen1989@live.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "scripts": {
+    "start": "electron ./app",
+    "start-debug": "WEB_DEBUG=1 electron --disable-http-cache ./app",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "devDependencies": {
+    "electron": "^7.2.4",
+    "electron-builder": "^20.43.0"
+  },
+  "build": {
+    "appId": "office-for-linux",
+    "asar": false,
+    "linux": {
+      "category": "Network;Email",
+      "packageCategory": "net",
+      "executableName": "office",
+      "synopsis": "Microsoft Office for Linux",
+      "description": "Unofficial Microsoft Office client for Linux using Electron. It uses the Web App\n and wraps it as a standalone application using Electron.",
+      "desktop": {
+        "Name": "Microsoft Office for Linux",
+        "Comment": "Unofficial client for Microsoft Office for Linux",
+        "StartupWMClass": "office-for-linux"
+      },
+      "target": [
+        "rpm",
+        "deb",
+        "pacman",
+        "tar.gz"
+      ]
+    }
+  },
+  "dependencies": {}
+}
